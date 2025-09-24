@@ -1,0 +1,48 @@
+# ==================================================
+# Golang build
+# ==================================================
+/bin/
+/build/
+/dist/
+/out/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Golang modules
+/vendor/
+
+# ==================================================
+# OS / Editor junk files
+# ==================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# VSCode / JetBrains
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# ==================================================
+# Environment & Config
+# ==================================================
+.env
+.env.*
+*.local
+*.secret
