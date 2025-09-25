@@ -1,6 +1,7 @@
 package main
 
 import (
+	// "html"
 	"log"
 	"os"
 
@@ -9,6 +10,7 @@ import (
 	"github.com/kukuh01/crud-golang/routes"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/template/html/v2"
 	"github.com/joho/godotenv"
 )
 
@@ -22,7 +24,12 @@ func main() {
 	config.InitDatabase()
 	migrations.RunMigration()
 
-	app := fiber.New()
+	//Load template
+	engine := html.New("./views", ".html")
+
+	app := fiber.New(fiber.Config{
+		Views: engine,
+	})
 
 	// register routes
 	routes.SetupRoutes(app)

@@ -13,8 +13,13 @@ func GetProducts(c *fiber.Ctx) error {
 	products, err := services.GetAllProducts()
 	if err != nil {
 		return c.Status(500).JSON(fiber.Map{"error": err.Error()})
+		// return c.Status(500).SendString(err.Error())
 	}
 	return c.JSON(products)
+	// return c.Render("index", fiber.Map{
+	// 	"Tilte":    "Daftar Produk",
+	// 	"Products": products,
+	// })
 }
 
 func GetProduct(c *fiber.Ctx) error {
